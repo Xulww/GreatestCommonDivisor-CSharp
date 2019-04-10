@@ -1,0 +1,38 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //input of the numbers and printing everything in the console
+            Console.WriteLine(GCD(18,12));
+        }
+        
+        //the method that calculates the GCD (2 numbers)
+        static int GCD (int a, int b)
+        {
+            while (a != 0 && b !=0)
+            {
+                if (a > b)
+                {
+                    a %= b;
+                }
+                else
+                {
+                    b %= a;
+                }
+            }
+
+            if (a == 0)
+            {
+                return b;
+            }
+            else
+            {
+                return a;
+            }
+        }
+    }
+}
