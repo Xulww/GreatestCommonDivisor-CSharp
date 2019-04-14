@@ -1,0 +1,22 @@
+using System;
+
+namespace Exercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int k = 2; k <= 100; k++)
+            {
+                if (k % 2 == 0)
+                {
+                    Console.WriteLine(k);
+                }
+                else
+                {
+                    Console.WriteLine(-k);
+                }
+            }
+        }
+    }
+}
