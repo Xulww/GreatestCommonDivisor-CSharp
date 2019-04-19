@@ -1,0 +1,49 @@
+using System;
+
+namespace Exercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a;
+            int b;
+            int c;
+            int d;
+            int x;
+
+            Console.Write("Enter a number: ");
+            x = int.Parse(Console.ReadLine());
+
+            //getting every number
+            a = x % 10;
+
+            x /= 10;
+            b = x % 10;
+
+            x /= 10;
+            c = x % 10;
+
+            x /= 10;
+            d = x % 10;
+
+            Console.Write("The sum of the individual numbers is: ");
+            Console.WriteLine(a + b + c + d);
+            Console.Write("The mirrored number is: ");
+            Console.Write(a);
+            Console.Write(b);
+            Console.Write(c);
+            Console.Write(d + "\n");
+            Console.Write("The number with the last number as its first is: ");
+            Console.Write(a);
+            Console.Write(d);
+            Console.Write(c);
+            Console.Write(b + "\n");
+            Console.Write("The number with the second and the third numbers swapped is: ");
+            Console.Write(d);
+            Console.Write(b);
+            Console.Write(c);
+            Console.Write(a + "\n");
+        }
+    }
+}
