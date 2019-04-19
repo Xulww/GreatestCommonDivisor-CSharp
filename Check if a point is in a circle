@@ -1,0 +1,40 @@
+using System;
+
+namespace Exercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        
+        /* 
+        NOTE:
+        IM NOT 100% SURE IF THE ALGORITHM IS CORRECT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        */
+        
+            double x;
+            double y;
+            double z;
+            double r;
+
+            Console.WriteLine("Program that checks if a certain point is in a circle!");
+            Console.Write("Please enter point coordinate X: ");
+            x = double.Parse(Console.ReadLine());
+            Console.Write("Please enter point coordinate Y: ");
+            y = double.Parse(Console.ReadLine());
+            Console.Write("Please enter radius of the circle r: ");
+            r = double.Parse(Console.ReadLine());
+
+            z = Math.Sqrt(Math.Pow(x,2) + Math.Pow(y,2));
+
+            if (z < r)
+            {
+                Console.WriteLine("The point is in the circle!");
+            }
+            else
+            {
+                Console.WriteLine("The point is not in the circle!");
+            }
+        }
+    }
+}
