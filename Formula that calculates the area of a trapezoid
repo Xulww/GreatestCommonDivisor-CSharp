@@ -1,0 +1,27 @@
+using System;
+
+namespace Exercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a;
+            double b;
+            double h;
+            double s;
+
+            Console.WriteLine("This is a program that calculates the area of a trapezoid: ");
+            Console.Write("Enter base a: ");
+            a = double.Parse(Console.ReadLine());
+            Console.Write("Enter base b: ");
+            b = double.Parse(Console.ReadLine());
+            Console.Write("Enter height h: ");
+            h = double.Parse(Console.ReadLine());
+
+            s = ((a + b) / 2) * h;
+
+            Console.Write("The area of the trapezoid is: " + s);
+        }
+    }
+}
