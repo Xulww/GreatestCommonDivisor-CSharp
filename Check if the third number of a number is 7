@@ -1,0 +1,28 @@
+using System;
+
+namespace Exercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a;
+            int b;
+
+            Console.Write("Enter a number: ");
+            a = int.Parse(Console.ReadLine());
+
+            b = a / 100;
+            b %= 10;
+
+            if (b == 7)
+            {
+                Console.WriteLine("The third number is 7!");
+            }
+            else
+            {
+                Console.WriteLine("The third number is not 7!");
+            }
+        }
+    }
+}
