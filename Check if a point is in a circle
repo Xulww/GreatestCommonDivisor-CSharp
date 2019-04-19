@@ -9,7 +9,7 @@ namespace Exercise
         
         /* 
         NOTE:
-        IM NOT 100% SURE IF THE ALGORITHM IS CORRECT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        I'M NOT 100% SURE IF THE ALGORITHM IS CORRECT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         */
         
             double x;
