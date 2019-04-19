@@ -6,12 +6,6 @@ namespace Exercise
     {
         static void Main(string[] args)
         {
-        
-        /* 
-        NOTE:
-        I'M NOT 100% SURE IF THE ALGORITHM IS CORRECT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        */
-        
             double x;
             double y;
             double z;
