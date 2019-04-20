@@ -1,0 +1,90 @@
+using System;
+
+namespace Homework1
+{
+    class Program
+    {
+        static double loan = 0; // the money you are taking
+        static double interest = 0; // the annual interest rate
+        static double months = 0; // the time period you choose to pay them back
+        static double moreMoney = 0; // the var that i use if they want to pay more
+        static string yesOrNo;
+
+        static double amountPerPeriod = 0; // how much you have to pay each month
+
+        // splitting the calculation formula in 2 parts
+        static double a = 0;
+        static double b = 0;
+
+        static void Main(string[] args)
+        {
+            // formating the program
+            Console.WriteLine("Welcome to the loan calculator!");
+            Console.WriteLine("Please enter the necessary information about your loan below!");
+
+            // input from the user
+            Console.Write("Loan amount (principal): ");
+            loan = double.Parse(Console.ReadLine());
+            Console.Write("Annual interest rate (in %): ");
+            interest = double.Parse(Console.ReadLine());
+            Console.Write("Term (in months): ");
+            months = double.Parse(Console.ReadLine());
+
+            // transforming the interest rate
+            interest /= 12;
+            interest *= 0.01;
+
+            // the formula behind the program
+            a = interest * Math.Pow((1 + interest), months);
+            b = Math.Pow((1 + interest), months) - 1;
+            amountPerPeriod = Math.Round(loan * (a / b), 2);
+
+            // printing a new line
+            Console.WriteLine();
+
+            // looping through the period that the user chose
+            for (int i = 1; i <= months; i++)
+            {
+                Console.WriteLine("Month " + i + " :");
+                Console.WriteLine("You have to pay: " + amountPerPeriod);
+                Console.WriteLine("So far you've paid: " + (amountPerPeriod * i) + "\n");
+            }
+
+            // printing how much the user paid at the end
+            Console.WriteLine("At the end you've paid: " + (amountPerPeriod * months));
+
+            // asking if they want to pay more or not
+            Console.Write("Do you want to pay more money a month (Yes / No): ");
+
+            // reading the input
+            yesOrNo = Console.ReadLine();
+
+            // checking the answer of the user
+            if (yesOrNo == "yes" || yesOrNo == "Yes")
+            {
+                Console.Write("How much more do you want to pay: ");
+                moreMoney = double.Parse(Console.ReadLine());
+                Console.WriteLine();
+
+                moreMoney += amountPerPeriod;
+
+                // calculating in how many months you will pay the loan
+                for (int i = 1; i <= months; i++)
+                {
+                    Console.WriteLine("Month " + i + " :");
+                    Console.WriteLine("You have to pay: " + moreMoney);
+                    Console.WriteLine("So far you've paid: " + (moreMoney * i) + "\n");
+
+                    if ((moreMoney * i) >= (amountPerPeriod * months))
+                    {
+                        break;
+                    }                   
+                }
+            }
+            else
+            {
+                Console.WriteLine("Goodbye and thank you for using the program!");
+            }
+        }
+    }
+}
