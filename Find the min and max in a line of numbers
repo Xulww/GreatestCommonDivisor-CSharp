@@ -1,0 +1,37 @@
+using System;
+
+namespace Exercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = 0;
+            int temp = 0;
+            int min = int.MaxValue;
+            int max = int.MinValue;
+
+            Console.Write("How many numbers do you want to enter: ");
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+                Console.Write("Enter number " + i + ": ");
+                temp = int.Parse(Console.ReadLine());
+
+                if (temp >= max)
+                {
+                    max = temp;
+                }
+
+                if (temp <= min)
+                {
+                    min = temp;
+                }
+            }
+
+            Console.WriteLine("The min is: " + min);
+            Console.WriteLine("The max is: " + max);
+        }
+    }
+}
