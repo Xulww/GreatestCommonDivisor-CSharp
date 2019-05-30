@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp17
+{
+    class Program
+    {     
+        static int GetMax(int x, int y)
+        {
+            if (x > y)
+            {
+                return x;
+            }
+
+            return y;
+        }
+
+        static void Main(string[] args)
+        {
+            int a;
+            int b;
+            int c;
+
+            Console.Write("Enter first num: ");
+            a = int.Parse(Console.ReadLine());
+            Console.Write("Enter secound num: ");
+            b = int.Parse(Console.ReadLine());
+            Console.Write("Enter third num: ");
+            c = int.Parse(Console.ReadLine());
+
+            Console.WriteLine(GetMax(GetMax(a, b), c));
+            
+        }
+    }
+}
