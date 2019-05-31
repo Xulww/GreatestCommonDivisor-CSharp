@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ADS_W4
+{
+    class StackNode<T>
+    {
+        public T Value { get; set; }
+
+        public StackNode<T> NextNode { get; set; }
+
+        public StackNode(T value, StackNode<T> nextNode = null)
+        {
+            Value = value;
+            NextNode = nextNode;
+        }
+    }
+
+    class LinkedStack<T>
+    {
+        private StackNode<T> firstNode;
+        public int Count { get; private set; }
+
+        public void Push(T item)
+        {
+            firstNode = new StackNode<T>(item, firstNode);
+            Count++;
+        }
+
+        public T Pop()
+        {
+            if (Count <= 0)
+            {
+                throw new InvalidOperationException();
+            }
+
+            var removedValue = firstNode;
+            firstNode = firstNode.NextNode;
+            Count--;
+
+            return removedValue.Value;
+        }
+
+        public T[] ToArray()
+        {
+            var arr = new T[Count];
+            var currentNode = firstNode;
+
+            for (int i = 0; i < Count; i++)
+            {
+                arr[i] = currentNode.Value;
+                currentNode = currentNode.NextNode;
+            }
+
+            return arr;
+        }
+    }
+}
