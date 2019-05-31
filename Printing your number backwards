@@ -1,0 +1,26 @@
+using System;
+
+namespace Exercise
+{
+    class Program
+    {
+        static void PrinNumBackwards()
+        {
+            int num = 0;
+
+            Console.Write("Enter number: ");
+            num = int.Parse(Console.ReadLine());
+
+            while (num != 0)
+            {
+                Console.Write(num % 10);
+                num /= 10;
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            PrinNumBackwards();
+        }
+    }
+}
