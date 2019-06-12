@@ -1,0 +1,42 @@
+using System;
+
+namespace ConsoleApp6
+{
+    class Program
+    {
+        static int numberOfLoops = 3;
+        static int numberOfIterations = 3;
+        static int[] loops;
+
+        static void SimulatingNestedLoops(int n)
+        {
+            if (n == numberOfLoops)
+            {
+                PrintNestedLoops();
+                return;
+            }
+
+            for (int counter = 1; counter <= numberOfIterations; counter++)
+            {
+                loops[n] = counter;
+                SimulatingNestedLoops(n + 1);
+            }
+        }
+
+        static void PrintNestedLoops()
+        {
+            for (int i = 0; i < numberOfLoops; i++)
+            {
+                Console.Write("{0}", loops[i]);
+            }
+
+            Console.WriteLine();
+        }
+
+        static void Main(string[] args)
+        {
+            loops = new int[numberOfLoops];
+            SimulatingNestedLoops(0);
+        }
+    }
+}
