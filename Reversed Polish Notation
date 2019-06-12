@@ -1,0 +1,109 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp6
+{
+    class Program
+    {
+    
+    /*EDIT: IT SHOULD WORK BUT IT DOESN'T (I THINK THE PROBLEM IS IN THE SWITCH CASE)*/
+    
+        static void ReversePolishNotation(string problem)
+        {
+            Stack<string> reversedNot = new Stack<string>();
+
+            string[] arr = problem.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < arr.Length; i++)
+            { 
+                bool isNumeric = int.TryParse(arr[i], out int n);
+
+                if (isNumeric)
+                {
+                    reversedNot.Push(arr[i]);
+                }
+                else
+                {
+                    reversedNot.Push(Calculate(arr[i], reversedNot.Pop(), reversedNot.Pop()));
+                }
+            }
+
+            if (reversedNot.Count == 1)
+            {
+                bool isNumeric = int.TryParse(reversedNot.Pop(), out int n);
+
+                if (isNumeric)
+                {
+                    Console.WriteLine(n);
+                }
+            }
+            else
+            {
+                throw new InvalidOperationException();
+            }
+        }
+
+        static string Calculate(string operation, string arg2, string arg1)
+        {
+            bool isA1Numeric = int.TryParse(arg1, out int a1);
+            bool isA2Numeric = int.TryParse(arg2, out int a2);
+
+            switch (operation)
+            {
+                case "+":
+                    if (isA1Numeric && isA2Numeric)
+                    {
+                        return Convert.ToString(a1 + a2);
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException();
+                    }
+                    break;
+
+                case "-":
+                    if (isA1Numeric && isA2Numeric)
+                    {
+                        return Convert.ToString(a1 - a2);
+                    }
+                    else
+                    {
+                        throw new InvalidCastException();
+                    }
+                    break;
+
+
+                case "*":
+                    if (isA1Numeric && isA2Numeric)
+                    {
+                        return Convert.ToString(a1 * a2);
+                    }
+                    else
+                    {
+                        throw new InvalidCastException();
+                    }
+                    break;
+
+                case "/":
+                    if (isA1Numeric && isA2Numeric)
+                    {
+                        return Convert.ToString(a1 / a2);
+                    }
+                    else
+                    {
+                        throw new InvalidCastException();
+                    }
+                    break;
+
+                default:
+                    throw new InvalidOperationException();
+                    break;
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            ReversePolishNotation("11, 1, +, 6, /, 3, *");
+        }
+    }
+}
