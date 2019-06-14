@@ -1,0 +1,25 @@
+using System;
+
+namespace Exercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a = 0;
+            double b = 0;
+            double c = 0;
+            double temp = 0;
+
+            Console.Write("Enter side a: ");
+            a = int.Parse(Console.ReadLine());
+            Console.Write("Enter side b: ");
+            b = int.Parse(Console.ReadLine());
+
+            temp = Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2));
+            c = Math.Sqrt(Math.Pow(temp, 2));        
+
+            Console.WriteLine("The hypotenuse of a triangle with legs {0} and {1} is: {2}", a, b, Math.Round(c, 2));
+        }
+    }
+}
