@@ -1,0 +1,29 @@
+using System;
+
+namespace Exercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] phrase = { "The product is good.", "This product is amazing.", "I use this product constantly.", "This is the best product in the category." };
+            string[] events = { "I feel good now.", "It changed me.", "It did miracles.", "I can't belive this, but i feel amazing.", "You should try it! I'm very satisfied." };
+            string[] firstName = { "Diana", "Jane", "Stella", "Angie", "Julia" };
+            string[] secondName = { "Woods", "Foster", "Fisher" };
+            string[] city = { "London", "New York", "Los Angeles", "Liverpool", "Miami" };
+
+            Random rand = new Random();
+
+            for (int i = 0; i < 3; i++)
+            {
+                int chosenPhrase = rand.Next(0, 3);
+                int chosenEvents = rand.Next(0, 4);
+                int chosenFirstName = rand.Next(0, 4);
+                int chosenSecondName = rand.Next(0, 2);
+                int chosenCity = rand.Next(0, 4);
+
+                Console.WriteLine(phrase[chosenPhrase] + " " + events[chosenEvents] + " " + firstName[chosenFirstName] + " " + secondName[chosenSecondName] + ", " + city[chosenCity]);
+            }
+        }
+    }
+}
