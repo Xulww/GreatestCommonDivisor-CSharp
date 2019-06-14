@@ -1,0 +1,44 @@
+using System;
+
+namespace Exercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a = 0;
+            double b = 0;
+            double c = 0;
+            double h = 0;
+            double angle = 0;
+            double p = 0;
+            double s = 0;
+
+            Console.Write("Enter side a = ");
+            a = double.Parse(Console.ReadLine());
+            Console.Write("Enter side b = ");
+            b = double.Parse(Console.ReadLine());
+            Console.Write("Enter side c = ");
+            c = double.Parse(Console.ReadLine());
+
+            p = (a + b + c) / 2;
+            s = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+
+            Console.WriteLine("The face of the triangle with 3 sides given is = " + Math.Round(s, 2));
+
+            Console.Write("Enter altitude h = ");
+            h = double.Parse(Console.ReadLine());
+
+            s = (a * h) / 2;
+
+            Console.WriteLine("The face of the triangle with 1 given side and an altitude is = " + Math.Round(s, 2));
+
+            Console.Write("Enter angle H = ");
+            angle = double.Parse(Console.ReadLine());
+
+            s = (a * b * Math.Sin(angle) / 2);
+
+            Console.WriteLine("The face of the triangle with 2 given sides and the angle between them is = " + Math.Round(s, 2));
+        }
+    }
+}
