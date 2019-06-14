@@ -1,0 +1,17 @@
+using System;
+
+namespace Exercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int year = 0;
+
+            Console.Write("Enter a year: ");
+            year = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Is {0} a leap year: {1}", year, DateTime.IsLeapYear(year));
+        }
+    }
+}
