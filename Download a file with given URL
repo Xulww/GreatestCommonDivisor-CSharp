@@ -1,0 +1,22 @@
+using System;
+using System.Net;
+
+namespace Exercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                WebClient webClient = new WebClient();
+                //the method below takes 2 arguments - the first one is the url of the file and the second one is the path to the local disk
+                webClient.DownloadFile("http://www.devbg.org/img/Logo-BASD.jpg", @"C:\Users\User\Desktop\Logo-BASD.jpg");
+            }
+            finally
+            {
+                Console.WriteLine("Downloading DONE!");
+            }
+        }
+    }
+}
