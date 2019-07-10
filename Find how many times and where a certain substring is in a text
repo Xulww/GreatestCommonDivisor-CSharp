@@ -1,0 +1,33 @@
+using System;
+using System.Text;
+
+namespace Exercise
+{
+    class Program
+    {
+        public static void CheckSubstringInText()
+        {
+            string text = "We are living in a yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.";
+            //the word that you are searching for
+            string keyword = "in";
+            int index = text.IndexOf(keyword);
+            int count = 0;
+
+            while (index != -1)
+            {
+                Console.WriteLine("{0} found at index: {1}", keyword, index);
+
+                index = text.IndexOf(keyword, index + 1);
+
+                count++;             
+            }
+
+            Console.WriteLine("The substring is found {0} times in the text!", count);
+        }
+
+        static void Main(string[] args)
+        {
+            CheckSubstringInText();
+        }
+    }
+}
