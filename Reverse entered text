@@ -1,0 +1,28 @@
+using System;
+using System.Text;
+
+namespace Exercise
+{
+    class Program
+    {
+        public static string ReverseText()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            Console.Write("Enter a word: ");
+            string word = Console.ReadLine();
+
+            for (int i = word.Length - 1; i >= 0 ; i--)
+            {
+                sb.Append(word[i]);                         
+            }
+
+            return sb.ToString();
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(ReverseText()); 
+        }
+    }
+}
