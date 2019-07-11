@@ -1,0 +1,34 @@
+using System;
+using System.Text;
+
+namespace Exercise
+{
+    class Program
+    {
+        public static void FillString()
+        {
+            StringBuilder sb = new StringBuilder(30);
+
+            Console.Write("Enter text: ");
+            string text = Console.ReadLine();
+            string finalText;
+
+            sb.Append(text);
+
+            if (text.Length <= 20)
+            {
+                finalText = text.PadRight(20, '*');
+                Console.WriteLine(finalText);
+            }
+
+            sb.Remove(20, text.Length - 20);
+
+            Console.WriteLine(sb.ToString());
+        }
+
+        static void Main(string[] args)
+        {
+            FillString();
+        }
+    }
+}
