@@ -1,0 +1,24 @@
+using System;
+using System.Text;
+
+namespace Exercise
+{
+    class Program
+    {
+        public static void TransformIntoUnicode()
+        {
+            Console.Write("Enter a word: ");
+            string text = Console.ReadLine();
+
+            foreach (char ch in text)
+            {
+                Console.Write(@"\u+{0:x4}", (int)ch);
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            TransformIntoUnicode();
+        }
+    }
+}
